@@ -40,14 +40,13 @@ function processData() {
   //loop over the controller list
   for (var key in simplePeer.controllerList) {
     var joystick = simplePeer.controllerList[key];
-
+    console.log(joystick.messagesPerSecond);
     //check if the joystick is being used
     if (joystick.isActive) {
       //console.log(joystick.ping);
       //use the peer id to access the matching coordinate pair and add position change to the current player position
       coordinates[joystick.peer.peer].x += joystick.positionChange.x;
       coordinates[joystick.peer.peer].y += joystick.positionChange.y;
-      console.log(joystick.messageTimesStats.length);
 
       //draw a ball for the new position
       ctx.fillStyle = colours[i];

@@ -4,21 +4,16 @@
     <script src="https://unpkg.com/smartcontroller@3.2.4/dist/smartcontroller.min.js"></script>
 </head>
 <body>
-    <p id="x">This is a p element.</p>
-    <div id="y">This is a div element.</div>
-    <div id="z">This is a div element.</div>
+    <p id="z">Z axis</p>
+    <div id="x">X axis</div>
+    <div id="y">Y axis</div>
 <script>
     var phone = new smartcontroller.SmartPhoneController();
     window.addEventListener("deviceorientation", function(event) {
-        var x = Math.floor(Math.random() * 256);
-        var y = Math.floor(Math.random() * 256);
-        var z = Math.floor(Math.random() * 256);
-        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-        //document.body.style.backgroundColor = bgColor;
-        var message = {accelerometer:{"x":event.alpha, "y": event.beta, "z":event.gamma}};
-        document.getElementById("x").innerHTML = event.alpha;
-        document.getElementById("y").innerHTML = event.beta;   
-        document.getElementById("z").innerHTML = event.gamma;   
+        var message = {accelerometer:{"z":event.alpha, "x": event.beta, "y":event.gamma}};
+        document.getElementById("z").innerHTML = event.alpha;
+        document.getElementById("x").innerHTML = event.beta;   
+        document.getElementById("y").innerHTML = event.gamma;   
         phone.sendMessage(message);
     }, true);
 
