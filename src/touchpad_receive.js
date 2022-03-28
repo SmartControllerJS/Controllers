@@ -8,9 +8,7 @@ var ctx = canvas.getContext("2d");
 var colours = ["red", "yellow", "green", "blue", "orange"]; // use colours to distinguish between players
 
 //create an instance of TouchpadSmartController, optionally specify a peer ID for the PC browser peer
-const simplePeer = new smartcontroller.TouchPadSmartController({
-  stats: false,
-});
+const simplePeer = new smartcontroller.TouchPadSmartController();
 
 //create and display a QR code for the smartphones, specify url for the controller, div element for the code to be displayed, optionally size and a player ID
 //this url is an official Touchpad compatible with the TouchPadSmartController class
