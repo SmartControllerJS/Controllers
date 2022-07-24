@@ -4,9 +4,8 @@ var phone = new smartcontroller.SmartPhoneController();
 
 // touch input canvas varaibles
 var canvasElement = document.getElementsByClassName("input_canvas")[0];
-//canvasElement.setAttribute("width", window.innerWidth);
+canvasElement.setAttribute("width", window.innerWidth / 2);
 canvasElement.setAttribute("height", window.innerHeight);
-var canvasCtx = canvasElement.getContext("2d");
 
 function start_handler(ev) {
   ev.preventDefault();
